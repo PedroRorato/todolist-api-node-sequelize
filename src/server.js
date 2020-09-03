@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
-
-
+//Start Database
+require('./database');
 //Start App
 const app = express();
 //Enable JSON

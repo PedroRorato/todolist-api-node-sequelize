@@ -2,14 +2,22 @@
 Simple Todo List API with Node and Sequelize.
 
 ## Installation Steps
-To use this application you must have MySQL and NPM or Yarn installed in your machine.
+To use this application you must have MySQL and Yarn installed in your machine.
 
 ### 1. Install Dependencies 
-In your terminal, go to the project root directory and execute *npm install* or *yarn*, to download all dependencies.
+To download all dependencies, go to the project root directory and execute in your terminal:
+
+    yarn
 
 ### 2. Create Database
 
     CREATE DATABASE todo_node_sequelize;
+    
+
+### 3. Create Tables
+To create the tables, go to the project root directory and execute in your terminal:
+
+    yarn sequelize db:migrate
     
 
 ### 3. Environment configuration
@@ -22,7 +30,9 @@ Create a *.env* file in the project root directory and change the values accordi
 
 
 ### 3. Run the application
-In your terminal, go to the project root directory and *npm run dev* or *yarn dev*.
+To run the application, go to the project root directory and execute in your terminal:
+
+    yarn dev
 
 #### The application is running! Enjoy it!
 
