@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-class User extends Model {
+class Task extends Model {
     static init(connection) {
         super.init({
-            name: {
+            title: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
@@ -16,7 +16,7 @@ class User extends Model {
                     }
                 }
             },
-            email: {
+            description: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
@@ -25,14 +25,6 @@ class User extends Model {
                     },
                     notEmpty: {
                         msg: "Esse campo não pode ser vazio"
-                    },
-                    async isUnique(value) {
-                        let user = await User.findOne({
-                            where: { email: value }
-                        });
-                        if (user) {
-                          throw new Error('Esse email já está sendo usado!');
-                        }
                     }
                 }
             },
