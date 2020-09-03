@@ -9,6 +9,7 @@ To download all dependencies, go to the project root directory and execute in yo
 
     yarn
 
+
 ### 2. Create Database
 
     CREATE DATABASE todo_node_sequelize;
@@ -20,7 +21,7 @@ To create the tables, go to the project root directory and execute in your termi
     yarn sequelize db:migrate
     
 
-### 3. Environment configuration
+### 4. Environment configuration
 Create a *.env* file in the project root directory and change the values according to your MySQL configurations:
 
     DB_HOST=localhost
@@ -29,14 +30,9 @@ Create a *.env* file in the project root directory and change the values accordi
     DB_DATABASE=todo_node_sequelize
 
 
-### 3. Run the application
+### 5. Run the application
 To run the application, go to the project root directory and execute in your terminal:
 
     yarn dev
 
 #### The application is running! Enjoy it!
-
-
-
-
-
