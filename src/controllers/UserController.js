@@ -26,6 +26,10 @@ module.exports = {
 
         const user = await User.findByPk(user_id);
 
+        if(!user) {
+            return response.status(404).json({ error: "User not found" })
+        }
+
         return response.json(user);        
     },
 
@@ -35,6 +39,10 @@ module.exports = {
         const { name, email } = request.body;
 
         const user = await User.findByPk(user_id);
+
+        if(!user) {
+            return response.status(404).json({ error: "User not found" })
+        }
 
         user.name = name;
         user.email = email;
@@ -49,6 +57,10 @@ module.exports = {
         const { user_id } = request.params;
 
         const user = await User.findByPk(user_id);
+
+        if(!user) {
+            return response.status(404).json({ error: "User not found" })
+        }
 
         await user.destroy();
 

@@ -20,11 +20,9 @@ class Task extends Model {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
-                    isEmail: {
-                        msg: "Formato de email inválido, por favor confira o email informado!"
-                    },
-                    notEmpty: {
-                        msg: "Esse campo não pode ser vazio"
+                    len: {
+                        args: [0, 250],
+                        msg: "Esse campo não deve ter mais de 250 caracteres"
                     }
                 }
             },
@@ -33,10 +31,9 @@ class Task extends Model {
         })
     }
 
-    // static associate(models) {
-    //     this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' });
-    //     this.belongsToMany(models.Tech, { foreignKey: 'user_id', through: 'user_techs', as: 'techs' });
-    // }
+    static associate(models) {
+        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+    }
 }
 
-module.exports = User;
+module.exports = Task;

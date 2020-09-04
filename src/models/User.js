@@ -25,7 +25,7 @@ class User extends Model {
                     },
                     notEmpty: {
                         msg: "Esse campo não pode ser vazio"
-                    },
+                    } ,
                     async isUnique(value) {
                         let user = await User.findOne({
                             where: { email: value }
@@ -41,10 +41,9 @@ class User extends Model {
         })
     }
 
-    // static associate(models) {
-    //     this.hasMany(models.Address, { foreignKey: 'user_id', as: 'addresses' });
-    //     this.belongsToMany(models.Tech, { foreignKey: 'user_id', through: 'user_techs', as: 'techs' });
-    // }
+    static associate(models) {
+        this.hasMany(models.Task, { foreignKey: 'user_id', as: 'tasks' });
+    }
 }
 
 module.exports = User;
