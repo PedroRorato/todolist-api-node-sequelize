@@ -5,7 +5,7 @@ const Task = require("../models/Task");
 module.exports = {
     async index(request, response) {
 
-        const { user_id } = request.params;
+        const user_id = 1;
 
         const user = await User.findByPk(user_id, {
             include: { association: 'tasks' }

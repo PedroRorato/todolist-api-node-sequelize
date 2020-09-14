@@ -12,10 +12,10 @@ routes.put('/users/:user_id', UserController.update );
 routes.delete('/users/:user_id', UserController.destroy );
 
 //Tasks
-routes.get('/users/:user_id/tasks', TaskController.index );
-routes.post('/users/:user_id/tasks', TaskController.store );
-routes.get('/users/:user_id/tasks/:task_id', TaskController.show );
-routes.put('/users/:user_id/tasks/:task_id', TaskController.update );
-routes.delete('/users/:user_id/tasks/:task_id', TaskController.destroy );
+routes.get('/tasks', TaskController.index );
+routes.post('/tasks', TaskController.store );
+routes.get('/tasks/:task_id', TaskController.show );
+routes.put('/tasks/:task_id', TaskController.update );
+routes.delete('/tasks/:task_id', TaskController.destroy );
 
 module.exports = routes;
