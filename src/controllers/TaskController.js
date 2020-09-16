@@ -11,22 +11,25 @@ module.exports = {
             include: { association: 'tasks' }
         });
 
-        return response.json(user);
+        return response.json(user.tasks);
     },
 
     async store(request, response) {
-        const { user_id } = request.params;
+        const user_id = 1;
         const { title, description } = request.body;
 
-        const user = await User.findByPk(user_id);
+        try{
+            const task = await Task.create({
+                title,
+                description,
+                user_id 
+            });
 
-        const task = await Task.create({
-            title,
-            description,
-            user_id 
-        });
-
-        return response.json(task);
+            return response.json(task);
+        } catch (error) {
+            return response.json(error);
+        }
+        
     },
 
     async show(request, response) {

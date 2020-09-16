@@ -8,21 +8,20 @@ class Task extends Model {
                 allowNull: false,
                 validate: {
                     notEmpty: {
-                        msg: "Esse campo não pode ser vazio"
+                        msg: "Esse campo não pode ser vazio!"
                     },
                     len: {
                         args: [2, 50],
-                        msg: "Esse campo deve ter entre 2 e 50 caracteres"
+                        msg: "Esse campo deve ter entre 2 e 50 caracteres!"
                     }
                 }
             },
             description: {
                 type: DataTypes.STRING,
-                allowNull: false,
                 validate: {
                     len: {
                         args: [0, 250],
-                        msg: "Esse campo não deve ter mais de 250 caracteres"
+                        msg: "Esse campo não deve ter mais de 250 caracteres!"
                     }
                 }
             },
